@@ -5,6 +5,6 @@ public class StringCalculator {
         if (numbers.isEmpty()) {
             return 0;
         }
-        return -1;  // Temporary return for TDD
+        return Integer.parseInt(numbers);  // Convert single number to int and return
     }
 }
