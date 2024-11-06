@@ -27,4 +27,10 @@ public class StringCalculatorTest {
         assertEquals(10, calculator.add("1,2,3,4"));  // Sum of multiple numbers
     }
 
+    @Test
+    public void testAddWithNewlineDelimiter() {
+        StringCalculator calculator = new StringCalculator();
+        assertEquals(6, calculator.add("1\n2,3"));  // Supports both commas and newlines
+    }
+
 }
