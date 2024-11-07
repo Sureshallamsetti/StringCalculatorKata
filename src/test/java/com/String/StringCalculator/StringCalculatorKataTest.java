@@ -36,5 +36,13 @@ public class StringCalculatorKataTest {
         assertEquals(3, new StringCalculator().add("//;\n1;2"));
     }
 
+    @Test
+    public void testNegativeNumberThrowsException() {
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            new StringCalculator().add("1,-2,3");
+        });
+        assertEquals("Negatives not allowed: -2", exception.getMessage());
+    }
+
 
 }

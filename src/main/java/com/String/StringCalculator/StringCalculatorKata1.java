@@ -1,6 +1,9 @@
 package com.String.StringCalculator;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.regex.Pattern;
+import java.util.List;
 
 public class StringCalculatorKata1 {
     public int add(String numbers) {
@@ -16,10 +19,20 @@ public class StringCalculatorKata1 {
 
         String[] numArray = numbers.split(delimiter);
         int sum = 0;
+        List<String> negatives = new ArrayList<>();
 
         for (String num : numArray) {
-            sum += Integer.parseInt(num);
+            int number = Integer.parseInt(num);
+            if (number < 0) {
+                negatives.add(num);
+            }
+            sum += number;
         }
+
+        if (!negatives.isEmpty()) {
+            throw new IllegalArgumentException("Negatives not allowed: " + String.join((CharSequence) ", ", (CharSequence) Collections.singleton(negatives)));
+        }
+
         return sum;
     }
 }
