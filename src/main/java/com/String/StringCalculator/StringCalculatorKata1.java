@@ -25,8 +25,9 @@ public class StringCalculatorKata1 {
             int number = Integer.parseInt(num);
             if (number < 0) {
                 negatives.add(num);
+            } else if (number <= 1000) {
+                sum += number;
             }
-            sum += number;
         }
 
         if (!negatives.isEmpty()) {

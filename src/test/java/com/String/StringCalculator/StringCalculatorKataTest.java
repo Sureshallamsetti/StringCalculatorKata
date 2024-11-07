@@ -43,6 +43,10 @@ public class StringCalculatorKataTest {
         });
         assertEquals("Negatives not allowed: -2", exception.getMessage());
     }
+    @Test
+    public void testIgnoreNumbersGreaterThan1000() {
+        assertEquals(2, new StringCalculator().add("2,1001"));
+    }
 
 
 }
