@@ -1,0 +1,23 @@
+package com.String.StringCalculator;
+
+// StringCalculatorTest.java
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
+
+public class StringCalculatorKataTest {
+
+    @Test
+    public void testEmptyStringReturnsZero() {
+        assertEquals(0, new StringCalculatorKata1().add(""));
+    }
+
+    @Test
+    public void testSingleNumberReturnsValue() {
+        assertEquals(1, new StringCalculator().add("1"));
+    }
+
+    @Test
+    public void testTwoNumbersReturnSum() {
+        assertEquals(3, new StringCalculator().add("1,2"));
+    }
+}
