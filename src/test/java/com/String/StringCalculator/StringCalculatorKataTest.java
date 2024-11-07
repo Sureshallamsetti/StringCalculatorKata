@@ -20,4 +20,10 @@ public class StringCalculatorKataTest {
     public void testTwoNumbersReturnSum() {
         assertEquals(3, new StringCalculator().add("1,2"));
     }
+
+    @Test
+    public void testMultipleNumbersReturnSum() {
+        assertEquals(10, new StringCalculator().add("1,2,3,4"));
+    }
+
 }
