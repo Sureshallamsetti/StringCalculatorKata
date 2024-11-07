@@ -6,7 +6,8 @@ public class StringCalculatorKata1 {
             return 0;
         }
 
-        String[] numArray = numbers.split(",");
+        String[] numArray = numbers.split("[,\n" +
+                "]");
         int sum = 0;
 
         for (String num : numArray) {
