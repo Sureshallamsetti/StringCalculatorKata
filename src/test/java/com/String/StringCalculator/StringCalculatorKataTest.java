@@ -38,14 +38,22 @@ public class StringCalculatorKataTest {
 
     @Test
     public void testNegativeNumberThrowsException() {
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            new StringCalculator().add("1,-2,3");
-        });
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> new StringCalculator().add("1,-2,3"));
         assertEquals("Negatives not allowed: -2", exception.getMessage());
     }
     @Test
     public void testIgnoreNumbersGreaterThan1000() {
         assertEquals(2, new StringCalculator().add("2,1001"));
+    }
+
+    @Test
+    public void testMultipleDelimiters() {
+        assertEquals(6, new StringCalculator().add("//[*][%]\n1*2%3"));
+    }
+
+    @Test
+    public void testMultipleDelimitersWithDifferentLengths() {
+        assertEquals(6, new StringCalculator().add("//[**][%%]\n1**2%%3"));
     }
 
 

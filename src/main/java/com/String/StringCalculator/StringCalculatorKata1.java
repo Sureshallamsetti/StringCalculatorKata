@@ -13,7 +13,9 @@ public class StringCalculatorKata1 {
                 "]";
         if (numbers.startsWith("//")) {
             int delimiterIndex = numbers.indexOf("\n");
-            delimiter = Pattern.quote(numbers.substring(2, delimiterIndex));
+            String delimiters = numbers.substring(2, delimiterIndex);
+            delimiters = delimiters.replace("[", "").replace("]", "|");
+            delimiter = Pattern.quote(delimiters);
             numbers = numbers.substring(delimiterIndex + 1);
         }
 
